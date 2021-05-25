@@ -174,12 +174,12 @@
         获取微软refresh_token — 通用型工具
         </div>
         <script type="text/javascript">
-			let url = new URL(window.location.href);
-			let data_list = ["client_id","client_secret","scope","redirect_uri"];
+            let url = new URL(window.location.href);
+            let data_list = ["client_id","client_secret","scope","redirect_uri"];
             for (di=0;di<4;di++){
-			  if (url.searchParams.get(data_list[di])){
-				document.getElementById(data_list[di]).value = url.searchParams.get(data_list[di])	  
-			  };
+            if (url.searchParams.get(data_list[di])){
+              document.getElementById(data_list[di]).value = url.searchParams.get(data_list[di])	  
+            };
             }; 
             function getCoke(account_type){
               let data_list = ["client_id","client_secret","scope","redirect_uri"];
@@ -197,12 +197,12 @@
             function getToken(){             
               let url = new URL(document.getElementById('code_0').value);
               if (url.searchParams.get('code')) {
-                  document.getElementById('code_2').value = url.searchParams.get('code');
-                  document.getElementById('submit_2').click();
-                  document.getElementById('code_0').value="";
-                } else if (url.searchParams.get('error')) {
-                    document.getElementById("errormsg").innerText = "出错 "+url.searchParams.get('error') + ":\n" + url.searchParams.get('error_description');
-                  };
+                document.getElementById('code_2').value = url.searchParams.get('code');
+                document.getElementById('submit_2').click();
+                document.getElementById('code_0').value="";
+              } else if (url.searchParams.get('error')) {
+                document.getElementById("errormsg").innerText = "出错 "+url.searchParams.get('error') + ":\n" + url.searchParams.get('error_description');
+              };
             };
             function getRefreshToken() {
               if (document.getElementById('code_0').value){
