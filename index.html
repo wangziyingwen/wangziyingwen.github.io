@@ -174,6 +174,13 @@
         获取微软refresh_token — 通用型工具
         </div>
         <script type="text/javascript">
+			let url = new URL(window.location.href);
+			let data_list = ["client_id","client_secret","scope","redirect_uri"];
+            for (di=0;di<4;di++){
+			  if (url.searchParams.get(data_list[di])){
+				document.getElementById(data_list[di]).value = url.searchParams.get(data_list[di])	  
+			  };
+            }; 
             function getCoke(account_type){
               let data_list = ["client_id","client_secret","scope","redirect_uri"];
               for (di=0;di<4;di++){
